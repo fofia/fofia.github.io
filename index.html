@@ -7,7 +7,7 @@
     <title>FOTOCOPIADORA</title>
     <link href="styles.css" type="text/css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(".range").change(add_filter).mousemove(add_filter);
@@ -30,28 +30,28 @@
 
 <body>
     <div id="wrapper">
+        <div class="degradado">
+            <div id="header">
+                <h1 id="logo">FOTOCOPIADORA</h1>
+            </div>
 
-        <div id="header">
-            <h1 id="logo">FOTOCOPIADORA</h1>
-        </div>
+            <div class="img-container">
+                <img id="output" class="print-container" />
+            </div>
 
-        <div class="img-container">
-            <img id="output" class="print-container" width="800px" />
-        </div>
+            <div id="buttons">
+                <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
+                    style="display: none;">
+                <label for="file" style="cursor: pointer;">SUBIR</label>
 
-        <div id="buttons">
-            <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
-                style="display: none;">
-            <label for="file" style="cursor: pointer;">SUBIR</label>
+                <script>
+                    var loadFile = function (event) {
+                        var image = document.getElementById('output');
+                        image.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
 
-            <script>
-                var loadFile = function (event) {
-                    var image = document.getElementById('output');
-                    image.src = URL.createObjectURL(event.target.files[0]);
-                };
-            </script>
-
-            <!--
+                <!--
             <button id="btn">DESCARGAR</button>
 
             <script>
@@ -81,35 +81,35 @@
 
 
 
-            <button type="button" onclick="window.print();">IMPRIMIR</button>
+                <button type="button" onclick="window.print();">IMPRIMIR</button>
 
-        </div>
-
-        <div id="edit_controls">
-            <li>BLANCO Y NEGRO<br><input id="grayscale" class="range" type="range" min="0" max="100" value="0"></li>
-
-            <li>BLUR<br><input id="blur" class="range" type="range" min="0" max="10" value="0"></li>
-
-            <li>EXPOSICIÓN<br><input id="exposure" class="range" type="range" min="0" max="200" value="100"></li>
-
-            <li>SEPIA<br><input id="sepia" class="range" type="range" min="0" max="100" value="0"></li>
-
-            <li>OPACIDAD<br><input id="opacity" class="range" type="range" min="0" max="100" value="100"></li>
-        </div>
-
-        <footer id="footer">
-            <div>
-                <p>MADE BY SOFÍA ROBLERO &COPY</p>
             </div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="https://www.behance.net/fofia">Behance</a> </li>
-                    <li><a href="https://dribbble.com/anomalylab">Dribbble</a></li>
-                    <li><a href="https://github.com/fofia">Github</a></li>
-                </ul>
-            </div>
-        </footer>
 
+            <div id="edit_controls">
+                <li>BLANCO Y NEGRO<br><input id="grayscale" class="range" type="range" min="0" max="100" value="0"></li>
+
+                <li>BLUR<br><input id="blur" class="range" type="range" min="0" max="10" value="0"></li>
+
+                <li>EXPOSICIÓN<br><input id="exposure" class="range" type="range" min="0" max="200" value="100"></li>
+
+                <li>SEPIA<br><input id="sepia" class="range" type="range" min="0" max="100" value="0"></li>
+
+                <li>OPACIDAD<br><input id="opacity" class="range" type="range" min="0" max="100" value="100"></li>
+            </div>
+
+            <footer id="footer">
+                <div>
+                    <p>MADE BY SOFÍA ROBLERO &COPY</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="https://www.behance.net/fofia">Behance</a> </li>
+                        <li><a href="https://dribbble.com/anomalylab">Dribbble</a></li>
+                        <li><a href="https://github.com/fofia">Github</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
     </div>
 
 
