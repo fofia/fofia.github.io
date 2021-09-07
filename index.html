@@ -1,121 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, user-scalable=no" />
-    <title>Fotocopiadora</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128438;</text></svg>">
-    <link href="styles.css" type="text/css" rel="stylesheet" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Sofía Roblero | UI / UXD Designer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖳</text></svg>">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="responsive.css" />
+  </head>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".range").change(add_filter).mousemove(add_filter);
-        });
-
-        function add_filter() {
-            var grayscale_val = $("#grayscale").val();
-            var blur_val = $("#blur").val();
-            var exposure_val = $("#exposure").val();
-            var sepia_val = $("#sepia").val();
-            var opacity_val = $("#opacity").val();
-
-            $("#output").css("-webkit-filter", "grayscale(" + grayscale_val + "%) blur(" + blur_val + "px) brightness(" + exposure_val + "%) sepia(" + sepia_val + "%) opacity(" + opacity_val + "%)");
-        }
-    </script>
-
-
-</head>
-
-
-<body>
-    <div id="wrapper">
-        <div class="degradado">
-            <div id="header">
-                <h1 id="logo">FOTOCOPIADORA</h1>
-            </div>
-
-            <div class="img-container">
-                <img id="output" class="print-container" />
-            </div>
-
-            <div id="buttons">
-                <input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"
-                    style="display: none;">
-                <label for="file" style="cursor: pointer;">SUBIR</label>
-
-                <script>
-                    var loadFile = function (event) {
-                        var image = document.getElementById('output');
-                        image.src = URL.createObjectURL(event.target.files[0]);
-                    };
-                </script>
-
-                <!--
-            <button id="btn">DESCARGAR</button>
-
-            <script>
-                const capture = () => {
-                    const body = document.querySelector('#output');
-                    body.id = 'capture';
-                    html2canvas(document.querySelector("#capture")).then(canvas => {
-                        document.body.appendChild(canvas);
-                    }).then(() => {
-                        var canvas = document.querySelector('canvas');
-                        canvas.style.display = 'none';
-                        var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-                        var a = document.createElement("a");
-                        a.setAttribute('download', 'myImage.png');
-                        a.setAttribute('href', image);
-                        a.click();
-                    });
-                };
-
-                const btn = document.getElementById('btn');
-                btn.addEventListener('click', capture)
-
-            </script>
-
--->
-
-
-
-
-                <button type="button" onclick="window.print();">IMPRIMIR</button>
-
-            </div>
-
-            <div id="edit_controls">
-                <li>BLANCO Y NEGRO<br><input id="grayscale" class="range" type="range" min="0" max="100" value="0"></li>
-
-                <li>BLUR<br><input id="blur" class="range" type="range" min="0" max="10" value="0"></li>
-
-                <li>EXPOSICIÓN<br><input id="exposure" class="range" type="range" min="0" max="200" value="100"></li>
-
-                <li>SEPIA<br><input id="sepia" class="range" type="range" min="0" max="100" value="0"></li>
-
-                <li>OPACIDAD<br><input id="opacity" class="range" type="range" min="0" max="100" value="100"></li>
-            </div>
-
-            <footer id="footer">
-                <div>
-                    <p>MADE BY SOFÍA ROBLERO &COPY</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="https://www.behance.net/fofia">Behance</a> </li>
-                        <li><a href="https://dribbble.com/anomalylab">Dribbble</a></li>
-                        <li><a href="https://github.com/fofia">Github</a></li>
-                        <li><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">License CC BY-NC-SA 4.0</a></li>
-                    </ul>
-                </div>
-            </footer>
+  <body>
+    <div id="gradient" />
+    <!--Inicio Container-->
+    <div id="container">
+      <!--Inicio Cabezera-->
+      <header id="header">
+        <div class="logo">
+          <h1 class="name1"><a href="index.html">Sofía</a></h1>
+          <h1 class="name2"><a href="index.html">Roblero</a></h1>
         </div>
+
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="index.html">Inicio</a>
+            </li>
+            <li>
+              <a href="proyectos.html">Proyectos</a>
+            </li>
+            <li>
+              <a href="experiencia.html">Experiencia</a>
+            </li>
+            <li>
+              <a href="contacto.html">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        
+        <div id="translate">
+          <a href="english/index.html">English</a> / 
+          <a href="index.html">Español</a>
+        </div>
+      </header>
+      <!--Fin Cabezera-->
+
+      <!--Inicio Contenido-->
+      <section id="content" class="home">
+        <aside id="aside-home">
+          <div id="name-content">
+            <p class="name1">Sofía</p>
+            <p class="name2">Roblero</p>
+
+            <p id="about">
+              Hola, soy una diseñadora gráfica multidisciplinaria me enfoco en
+              branding, interface design y diseño web.
+              <br>
+              <br>
+              Algunos de mis proyectos: 
+              <br>
+              <br>
+              <ul id="about" style="list-style-type:none;">
+               <li> <a class="experience-link" href="https://www.instagram.com/studioanomaly/">Anomaly Studio</a> aquí publico mi trabajo de diseño. </li>
+                <li><a class="experience-link" href="https://almacen.mercadoshops.com.mx/">Almacén</a> tienda en línea.</li>
+               <li><a class="experience-link" href="https://fofiane.tumblr.com/">Fotografías.</a></li>
+                <li>Tips para <a class="experience-link" href="https://www.instagram.com/aletasport/">natación.</a></li>  
+               <li>Cree <a class="experience-link" href="https://fofia.github.io/">Fotocopiadora</a> web app para editar e imprimir recibos.</li>
+              </ul>
+            </p>
+          </div>
+        </aside>
+
+        <div id="projects-art">
+          <img src="img/fondo.png" id="letra-cubo" alt="letra cubo" />
+        </div>
+      </section>
+      <!--Fin Contenido-->
+
+      <!--Inicio Footer-->
+      <footer id="footer">
+        <div class="info">
+          <a href="https://www.behance.net/fofia">Behance</a>
+          <a href="https://dribbble.com/anomalylab">Dribbble</a>
+          <a href="https://github.com/fofia">Github</a>
+          <a href="https://www.linkedin.com/in/sof%C3%ADaroblero">LinkedIn</a>
+        </div>
+
+        <div class="info2">Creado por Sofía Roblero &copy 2020</div>
+      </footer>
+      <!--Fin Footer-->
     </div>
-
-
-</body>
-
-
+    <!--Fin Container-->
+  </body>
 </html>
